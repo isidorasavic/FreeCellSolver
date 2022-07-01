@@ -1,0 +1,19 @@
+18
+freecell 3K
+final_field 3H
+freecell 3H
+final_field 2H
+freecell 2H
+final_field 2P
+final_field 2T
+final_field 2K
+newstack 2K
+final_field 1T
+newstack 2T
+final_field 1H
+newstack 2H
+final_field 1P
+freecell 2P
+newstack 2P
+final_field 1K
+
