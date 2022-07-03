@@ -21,7 +21,7 @@ class Move(object):
                 Suits.freecell: 7
             },
             Suits.freecell: {
-                Suits.stack: 3,
+                Suits.stack: 5,
                 Suits.final_field: 2,
             },
             Suits.final_field: {

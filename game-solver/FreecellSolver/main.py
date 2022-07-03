@@ -3,10 +3,10 @@ from FileHandler import read_file
 
 
 if __name__ == '__main__':
-    file_name = "test1"
+    file_name = "game3"
     initial_state, num_of_cards = read_file(f"{file_name}.txt")
 
-    game = FreeCell(board=initial_state)
+    game = FreeCell(stacks=initial_state)
 
     solution = game.solve()
 

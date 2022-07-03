@@ -60,7 +60,7 @@ class Card:
             suit_symbol = Fore.RED+'♦'+Fore.RESET
         if self._suit == 'P':
             suit_symbol = Fore.BLACK+'♠'+Fore.RESET
-        return str(self._value)+suit_symbol+" "
+        return get_str_value(self._value)+suit_symbol+" "
 
     def __eq__(self, card2):
         if card2 is None:
