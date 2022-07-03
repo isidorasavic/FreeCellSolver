@@ -1,0 +1,9 @@
+8
+freecell 1T
+final_field 1K
+freecell 1K
+final_field 1P
+freecell 1P
+final_field 1H
+freecell 1H
+

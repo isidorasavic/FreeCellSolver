@@ -1,9 +1,10 @@
 # herc = H
 # pik = P
 # tref = T
-# karo = D (diamond)
+# karo = K
 
 from Utils import Suits
+from colorama import init, Fore, Back, Style
 
 
 class Card:
@@ -50,29 +51,31 @@ class Card:
         self._color = color
 
     def __str__(self):
-        return str(self._value)+self._suit
+        suit_symbol = ""
+        if self._suit == 'H':
+            suit_symbol = Fore.RED+'♥'+Fore.RESET
+        if self._suit == 'T':
+            suit_symbol = Fore.BLACK+'♣'+Fore.RESET
+        if self._suit == 'K':
+            suit_symbol = Fore.RED+'♦'+Fore.RESET
+        if self._suit == 'P':
+            suit_symbol = Fore.BLACK+'♠'+Fore.RESET
+        return str(self._value)+suit_symbol+" "
 
     def __eq__(self, card2):
         if card2 is None:
             return False
-        if self.get_color() == card2.get_color() and self.get_suit() == card2.get_suit() and \
-                self.get_value() == card2.get_value():
-            return True
-        else:
-            return False
+        return self.get_color() == card2.get_color() and self.get_suit() == card2.get_suit() and \
+            self.get_value() == card2.get_value()
 
     def __copy__(self):
         return Card(self._suit, get_str_value(self._value))
 
-    def is_larger_and_same_suit(self, card2):
-        if self._suit == card2.get_suit() and self.get_value() - 1 == card2.get_value():
-            return True
-        return False
-
-    def is_smaller_and_diff_color(self, card2):
-        if self.get_color() != card2.get_color() and self.get_value() + 1 == card2.get_value():
-            return True
-        return False
+    # def is_larger_and_same_suit(self, card2):
+    #     return self._suit == card2.get_suit() and self.get_value() - 1 == card2.get_value()
+    #
+    # def is_smaller_and_diff_color(self, card2):
+    #     return self.get_color() != card2.get_color() and self.get_value() + 1 == card2.get_value()
 
     def __hash__(self):
         return hash((self._color, self._suit, self._value))

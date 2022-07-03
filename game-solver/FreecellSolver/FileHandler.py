@@ -1,10 +1,9 @@
-from State import State
 from Card import Card
 from Utils import Suits
 
 
 def read_file(file_name):
-    state = State()
+    stacks = [[], [], [], [], [], [], [], []]
 
     f = open("games\\" + file_name, "r")
     line = f.readline()
@@ -22,11 +21,9 @@ def read_file(file_name):
                 number = number[:-1]
             new_card = Card(suit, number)
 
-            state.stacks[brojac].append(new_card)
-            state.pair[new_card] = Suits.stack
+            stacks[brojac].append(new_card)
             brojac += 1
-            print_string += str(new_card)+" "
-        # brojac += 1
+            print_string += str(new_card)
         line = f.readline()
         print(print_string)
 
@@ -34,7 +31,7 @@ def read_file(file_name):
     f.close()
     print("Number of cards: ", num_of_cards)
 
-    return state
+    return stacks, num_of_cards
 
 
 def write_file(file_name, solution):
